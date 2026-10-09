@@ -174,8 +174,8 @@
     }
 
     const containerClass = computed(() => {
-        if (activeTab.value?.locked || activeTab.value?.fullContainer) return {"px-0": true, "full-container": true}
-        return {"container": true, "tabs-flush-top": true}
+        if (activeTab.value?.locked || activeTab.value?.fullContainer) return {paddingInline: 0, "full-container": true}
+        return {"ks-container": true, "tabs-flush-top": true}
     })
 
     // --- Horizontal bar (ported from the removed KsRouterTab) ---
@@ -302,6 +302,10 @@
 
     section.no-overflow {
         overflow: hidden;
+    }
+
+    .ks-container {
+        padding-inline: var(--ks-spacing-6);
     }
 
     .editor-splitter {
